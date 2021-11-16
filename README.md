@@ -3,10 +3,7 @@ The most modern, easiest, advanced and Customizable Lexer Took Kit in the World
 -----------
 Newest Release:
 # 0.2
-Changes:
-- Removed ModifyVariable function since its super unnesecery and useless
-- Added 2 Examples C++ File for you to reference if you're new to this toolkit
-- Removed `TRUE` and `FALSE` Tokens, they are replaced from `BOOLEAN` Token instead
+
 -----------
 Example Code:
 ```cpp
@@ -55,6 +52,8 @@ Available configuration:
 | use_bitwise         | boolean | false                    | If enabled, operator `&`, `|`, `^`, `~` will be identified as `BIWISE` label
 | use_boolean         | boolean | true                     | If enabled, keyword that is same as `true_template`/`false_template`'s value will be identified as `TRUE`/`FALSE`
 | use_and_or_keyword  | boolean | false                    | If enabled, keyword that is same as `and_template`/`or_template`'s value will be identified as `AND`/`OR` label
+| ignore_endline      | boolean | false                    | If enabled, `END_LINE` token wont be added to the data during Process()
+
 ----------
 ## Available operators:
 - `+` (Labeled as `OPERATORS`)
