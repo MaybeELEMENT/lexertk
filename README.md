@@ -31,7 +31,7 @@ Output:
 Available configuration:
 | Configuration Name  |   Type  | Default Value            | Description |
 | ------------------- | ------- | ------------------------ | ----------- |
-| error_prefix        | string  | "Error on line $line : " | Change the prefix of error message. `str_error` or/and `decimal_error` must be true in order for this to work
+| error_prefix        | string  | "Error on line $line : " | Change the prefix of error message. `str_error` or/and `decimal_error` must be true in order for this to work. You can use $line replaceholder to make it the line that is being processed
 | decimal_error_msg   | string  | "Invalid syntax '.'"     | Change the message of decimal error message. `decimal_error` must be true in order for this to work
 | unclose_string_1    | string  | "Unclosed \`'\`"         | Change the message of unclosed Apostrophe mark/string, `str_error` must be true in order for this to work
 | unclose_string_2    | string  | "Unclosed \`\\"\`"       | Change the message of unclosed Ditto mark, `str_error` must be true in order for this to work
