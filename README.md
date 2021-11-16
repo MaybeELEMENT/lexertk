@@ -7,6 +7,7 @@ Changes:
 - Removed ModifyVariable function since its super unnesecery and useless
 - Added 2 Examples C++ File for you to reference if you're new to this toolkit
 - Removed `TRUE` and `FALSE` Tokens, they are replaced from `BOOLEAN` Token instead
+-----------
 Example Code:
 ```cpp
 #include <iostream>
