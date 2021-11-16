@@ -1,9 +1,5 @@
 # lexertk
-The most modern, easiest, advanced and Customizable Lexer Took Kit in the World
------------
-Newest Release:
-# 0.2
-
+The most modern, easiest, advanced and Customizable Lexer Took Kit in the World for C++
 -----------
 Example Code:
 ```cpp
@@ -52,7 +48,8 @@ Available configuration:
 | use_bitwise         | boolean | false                    | If enabled, operator `&`, `|`, `^`, `~` will be identified as `BIWISE` label
 | use_boolean         | boolean | true                     | If enabled, keyword that is same as `true_template`/`false_template`'s value will be identified as `TRUE`/`FALSE`
 | use_and_or_keyword  | boolean | false                    | If enabled, keyword that is same as `and_template`/`or_template`'s value will be identified as `AND`/`OR` label
-| ignore_endline      | boolean | false                    | If enabled, `END_LINE` token wont be added to the data during Process()
+| ignore_endline      | boolean | false                    | If enabled, when meet a `\n` in input of lexer. It will directly ignore it
+| remove_endline      | boolean | false                    | If enabled, `END_LINE` token wont be added to the data during Process(), will also make `ignore_endline` to true.
 
 ----------
 ## Available operators:
@@ -67,6 +64,9 @@ Available configuration:
 - `[` (Labeled as `OPERATORS`)
 - `]` (Labeled as `OPERATORS`)
 - `{` (Labeled as `OPERATORS`)
+- `:` (Labeled as `OPERATORS`)
+- `:=` (Labeled as `ASSIGNMENT`)
+- `::` (Labeled as `OPERATORS`)
 - `}` (Labeled as `OPERATORS`)
 - `;` (Labeled as `OPERATORS`)
 - `~` (If `use_bitwise` enabled, this will be labeled as `BITWISE`)
