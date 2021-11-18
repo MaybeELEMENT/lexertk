@@ -157,6 +157,9 @@ Available configuration:
   - `read_file()`
     - Example: `lexerobject.read_file(file_path);`
     - `file_path` argument is for the path lexer to read and return as string.
+  - `Update()`
+    - Example: lexerobject.Update(value);`
+    - `value` argument is for the string lexer will process
   - `Process()`
     - Example: `lexerobject.Process();`
     - This function will process the value brought in by `Lexer lexerobject(value);` and return the results as `Parser` class
