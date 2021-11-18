@@ -41,7 +41,7 @@ namespace ELEMENT
         OPERATOR  , VARIABLE  , INCREMENT ,
         DECREMENT , PUNCTUATOR, COMPARISON,
         ASSIGNMENT, OR        , AND       ,
-        BITWISE   , BOOLEAN
+        BITWISE   , BOOLEAN   , TAB
     }eTokens;
     class Data
     {
@@ -68,6 +68,7 @@ namespace ELEMENT
                 case AND: return "AND";
                 case BITWISE: return "BITWISE";
                 case BOOLEAN: return "BOOLEAN";
+                case TAB: return "TAB";
             }return "NULL";}
         std::string operator[](int i) const
         {
@@ -207,6 +208,7 @@ namespace ELEMENT
         bool remove_endline = false;
         bool str_error = true;
         bool decimal_error = true;
+        int tab_length = 4;
         bool str_only_escape = false;
         bool use_and_or_on_operator = false;
         bool use_bitwise = false;
@@ -247,10 +249,35 @@ namespace ELEMENT
                         }
                         line++;
                     break;
+                    case '\t':
+                        if(instring || inchar) temp.push_back('\t');
+                        else
+                        {
+                            res.append(TAB, "\\t");
+                            addRes(temp, res);
+                            temp.clear();
+                            wasstring = false;
+                            waschar = false;
+                            invar = false;
+                            inint = false;
+                            escaped = false;
+                            indecimal = false;
+                        }
+                    break;
                     case ' ':
                         if(instring || inchar) temp.push_back(' ');
                         else
                         {
+                            bool istab = true;
+                            for(int b = 0; b < tab_length; b++)
+                            {
+                                if(val[i + b] != ' ') istab = false;
+                            }
+                            if(istab) 
+                            {
+                                i += (tab_length - 1);
+                                res.append(TAB, "\\t");
+                            }
                             addRes(temp, res);
                             temp.clear();
                             wasstring = false;
