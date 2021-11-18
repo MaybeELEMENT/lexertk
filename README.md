@@ -50,6 +50,7 @@ Available configuration:
 | use_and_or_keyword  | boolean | false                    | If enabled, keyword that is same as `and_template`/`or_template`'s value will be identified as `AND`/`OR` label
 | ignore_endline      | boolean | false                    | If enabled, when meet a `\n` in input of lexer. It will directly ignore it
 | remove_endline      | boolean | false                    | If enabled, `END_LINE` token wont be added to the data during Process(), will also make `ignore_endline` to true.
+| tab_length          | interger | 4                       | Change the amount of how many space in a row will be defined as `TAB`
 
 ----------
 ## Available operators:
@@ -102,6 +103,7 @@ Available configuration:
 - `?` (Labeled as `OPERATORS`)
 - `?:` (Labeled as `OPERATORS`)
 - `.` (Only labeled as `OPERATORS` if not a part of decimal)
+- `\t` (Labeled as `TAB`)
 ## Example of tokens:
 - STRING
   - `"Hello World!"`
